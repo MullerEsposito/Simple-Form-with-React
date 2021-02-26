@@ -1,0 +1,11 @@
+.container-select {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 185px;
+    margin: 5px;
+}
+
+.container-select select {
+    width: 185px;
+}
