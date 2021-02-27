@@ -20,6 +20,9 @@ class Form extends Component {
         })
     }
 
+    retrievesValidationCity = hasError => hasError && this.setState({ inputCity: ""});
+    
+
     render() {
         const options = [
             { value: "", label: "SELECT STAGE" },
@@ -33,7 +36,7 @@ class Form extends Component {
             { id: "radio-apartamento", name: "tipo", value: "Apartamento", label: "Apartamento:"}
         ]
         const { 
-                inputName="", inputEmail="", inputCpf, inputCity, inputRoleDesc, inputRadioGroup,
+                inputName="", inputEmail="", inputCpf, inputCity="", inputRoleDesc, inputRadioGroup,
                 textareaAddress, selectStates, textareaResume, textareaRole  } = this.state;
 
         return (
@@ -44,7 +47,7 @@ class Form extends Component {
                     <Input id="inputEmail" type="text" max="50" required={true} value={inputEmail} handleOnChange={this.handleOnChange}>Email:</Input>
                     <Input id="inputCpf" type="text" max="11" required={true} value={inputCpf} handleOnChange={this.handleOnChange}>CPF:</Input>
                     <Input id="textareaAddress" type="textarea" max="200" required={true} value={textareaAddress} handleOnChange={this.handleOnChange}>Address:</Input>
-                    <Input id="inputCity" type="text" max="28" required={true} value={inputCity} handleOnChange={this.handleOnChange}>City:</Input>
+                    <Input id="inputCity" type="text" max="28" required={true} value={inputCity} handleOnChange={this.handleOnChange} handleOnBlur={this.retrievesValidationCity}>City:</Input>
                     <Select id="selectStates" name="select-states" listOptions={options} value={selectStates} handleOnChange={this.handleOnChange}>State:</Select>
                     <RadioGroup id="inputRadioGroup" listRadio={radios} checked={inputRadioGroup} handleOnChange={this.handleOnChange}>Tipo:</RadioGroup>
                 </fieldset>

@@ -3,8 +3,14 @@ import React, { Component } from 'react';
 import './style.css';
 
 class Input extends Component {
+
+    cityValidate = city => city.match(/^[0-9]/);
+    
+
     render() {
-        const { id, type, max, required, children, handleOnChange, value } = this.props;
+        const { id, type, max, required, children, value, handleOnChange, handleOnBlur } = this.props;
+
+
         
         return (
             <div className="container-input">
@@ -22,6 +28,7 @@ class Input extends Component {
                         return <input 
                                     id={id} name={id} type={type} 
                                     maxLength={max} required={required}
+                                    onBlur={() => { handleOnBlur(this.cityValidate(value)); } }
                                     onChange={handleOnChange} value={value}
                                 />;
                     })()}
