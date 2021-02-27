@@ -28,7 +28,9 @@ class Input extends Component {
                         return <input 
                                     id={id} name={id} type={type} 
                                     maxLength={max} required={required}
-                                    onBlur={() => { handleOnBlur(this.cityValidate(value)); } }
+                                    onBlur={ id === 'inputCity' 
+                                        ? () => { handleOnBlur(this.cityValidate(value)); }
+                                        : () => {} }
                                     onChange={handleOnChange} value={value}
                                 />;
                     })()}
