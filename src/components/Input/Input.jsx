@@ -3,8 +3,23 @@ import React, { Component } from 'react';
 import './style.css';
 
 class Input extends Component {
+    constructor() {
+        super();
+        this.state = {
+            noAlert: true,
+        }
+    }
 
     cityValidate = city => city.match(/^[0-9]/);
+
+    handleOnMouseEnter = ({ target: { name }}) => {
+        const { noAlert } = this.state;
+
+        if (name === 'textareaRole' && noAlert ) {
+            alert('Fill careful this info!'); 
+            this.setState({noAlert: false});
+        } 
+    }
     
 
     render() {
@@ -22,6 +37,7 @@ class Input extends Component {
                             <textarea 
                                 id={id} name={id} value={value} maxLength={max}
                                 required={required} onChange={handleOnChange}
+                                onMouseEnter={this.handleOnMouseEnter}
                             />
                         ) 
                         
