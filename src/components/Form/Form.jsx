@@ -33,7 +33,7 @@ class Form extends Component {
             { id: "radio-apartamento", name: "tipo", value: "Apartamento", label: "Apartamento:"}
         ]
         const { 
-                inputName="", inputEmail, inputCpf, inputCity, inputRoleDesc, inputRadioGroup,
+                inputName="", inputEmail="", inputCpf, inputCity, inputRoleDesc, inputRadioGroup,
                 textareaAddress, selectStates, textareaResume, textareaRole  } = this.state;
 
         return (
