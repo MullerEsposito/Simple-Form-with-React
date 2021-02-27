@@ -15,7 +15,6 @@ class Form extends Component {
     }
 
     handleOnChange = ({ target : { name, value } }) => {
-        
         this.setState({
             [name]: value
         })
@@ -34,7 +33,7 @@ class Form extends Component {
             { id: "radio-apartamento", name: "tipo", value: "Apartamento", label: "Apartamento:"}
         ]
         const { 
-                inputName, inputEmail, inputCpf, inputCity, inputRoleDesc,
+                inputName, inputEmail, inputCpf, inputCity, inputRoleDesc, inputRadioGroup,
                 textareaAddress, selectStates, textareaResume, textareaRole  } = this.state;
 
         return (
@@ -47,7 +46,7 @@ class Form extends Component {
                     <Input id="textareaAddress" type="textarea" max="200" required={true} value={textareaAddress} handleOnChange={this.handleOnChange}>Address:</Input>
                     <Input id="inputCity" type="text" max="28" required={true} value={inputCity} handleOnChange={this.handleOnChange}>City:</Input>
                     <Select id="selectStates" name="select-states" listOptions={options} value={selectStates} handleOnChange={this.handleOnChange}>State:</Select>
-                    <RadioGroup listRadio={radios} handleOnChange={this.handleOnChange}>Tipo:</RadioGroup>
+                    <RadioGroup id="inputRadioGroup" listRadio={radios} checked={inputRadioGroup} handleOnChange={this.handleOnChange}>Tipo:</RadioGroup>
                 </fieldset>
                 <fieldset>
                     <legend>Last Job Data</legend>

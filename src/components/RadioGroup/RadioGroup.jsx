@@ -5,9 +5,12 @@ import './style.css';
 
 class RadioGroup extends Component {
     render() {
-        const { listRadio, children } = this.props;
+        const { listRadio, children, checked, handleOnChange } = this.props;
         const radios = listRadio.map(({id, name, value, label}) => 
-            <Radio key={id} id={id} name={name} value={value}>{label}</Radio>)
+                <Radio key={id} id={id} name={name} value={value} 
+                       checked={checked} handleOnChange={handleOnChange}> 
+                    {label}
+                </Radio>)
 
 
         return (
