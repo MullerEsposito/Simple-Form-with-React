@@ -15,7 +15,7 @@ class Form extends Component {
     }
 
     handleOnChange = ({ target : { name, value } }) => {
-        console.log(`handlOnChange...`);
+        
         this.setState({
             [name]: value
         })
@@ -23,10 +23,10 @@ class Form extends Component {
 
     render() {
         const options = [
-            { label: "SELECT STAGE", value: "" },
-            { label: "MG", value: "MINAS GERAIS" },
-            { label: "MA", value: "MARANHÃO" },
-            { label: "BSB", value: "BRASÍLIA" },
+            { value: "", label: "SELECT STAGE" },
+            { value: "MG", label: "MINAS GERAIS" },
+            { value: "MA", label: "MARANHÃO" },
+            { value: "BSB", label: "BRASÍLIA" },
         ];
 
         const radios = [
@@ -46,7 +46,7 @@ class Form extends Component {
                     <Input id="inputCpf" type="text" max="11" required={true} value={inputCpf} handleOnChange={this.handleOnChange}>CPF:</Input>
                     <Input id="textareaAddress" type="textarea" max="200" required={true} value={textareaAddress} handleOnChange={this.handleOnChange}>Address:</Input>
                     <Input id="inputCity" type="text" max="28" required={true} value={inputCity} handleOnChange={this.handleOnChange}>City:</Input>
-                    <Select id="selectStates" name="select-states" listOptions={options} handleOnChange={this.handleOnChange}>State:</Select>
+                    <Select id="selectStates" name="select-states" listOptions={options} value={selectStates} handleOnChange={this.handleOnChange}>State:</Select>
                     <RadioGroup listRadio={radios} handleOnChange={this.handleOnChange}>Tipo:</RadioGroup>
                 </fieldset>
                 <fieldset>
