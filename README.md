@@ -1,11 +1,11 @@
-### Criando um formulário em React .
+# Criando um formulário em React .
 
 Crie estilos CSS para seu formulário, de acordo com a sua imaginação.
 Faça tudo utilizando as abstrações do React .
 
-### Vamos criar um formulário de cadastro de currículo com base na especificação seguintes:
+## Vamos criar um formulário de cadastro de currículo com base na especificação seguintes:
 
-## Crie um <fieldset> para os dados pessoais a seguir:
+#### Crie um <fieldset> para os dados pessoais a seguir:
 Nome - Texto
 Limite de 40 caracteres
 Todos os caracteres devem ser transformados para UPPER CASE assim que forem digitados.
@@ -31,7 +31,7 @@ Tipo - Radio Button
 Casa, Apartamento
 Campo obrigatório.
 
-## Crie outro <fieldset> para dados do seu último emprego:
+### Crie outro <fieldset> para dados do seu último emprego:
 Resumo do currículo - TextArea
 Limite de 1000 caracteres
 Campo obrigatório.
