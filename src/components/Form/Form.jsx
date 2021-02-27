@@ -24,13 +24,6 @@ class Form extends Component {
     
 
     render() {
-        const options = [
-            { value: "", label: "SELECT STAGE" },
-            { value: "MG", label: "MINAS GERAIS" },
-            { value: "MA", label: "MARANHÃO" },
-            { value: "BSB", label: "BRASÍLIA" },
-        ];
-
         const radios = [
             { id: "radio-casa", name: "tipo", value: "Casa", label: "Casa:"},
             { id: "radio-apartamento", name: "tipo", value: "Apartamento", label: "Apartamento:"}
@@ -48,7 +41,7 @@ class Form extends Component {
                     <Input id="inputCpf" type="text" max="11" required={true} value={inputCpf} handleOnChange={this.handleOnChange}>CPF:</Input>
                     <Input id="textareaAddress" type="textarea" max="200" required={true} value={textareaAddress} handleOnChange={this.handleOnChange}>Address:</Input>
                     <Input id="inputCity" type="text" max="28" required={true} value={inputCity} handleOnChange={this.handleOnChange} handleOnBlur={this.retrievesValidationCity}>City:</Input>
-                    <Select id="selectStates" name="select-states" listOptions={options} value={selectStates} handleOnChange={this.handleOnChange}>State:</Select>
+                    <Select id="selectStates" name="select-states" value={selectStates} handleOnChange={this.handleOnChange}>State:</Select>
                     <RadioGroup id="inputRadioGroup" listRadio={radios} checked={inputRadioGroup} handleOnChange={this.handleOnChange}>Tipo:</RadioGroup>
                 </fieldset>
                 <fieldset>
