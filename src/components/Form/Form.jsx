@@ -33,14 +33,14 @@ class Form extends Component {
             { id: "radio-apartamento", name: "tipo", value: "Apartamento", label: "Apartamento:"}
         ]
         const { 
-                inputName, inputEmail, inputCpf, inputCity, inputRoleDesc, inputRadioGroup,
+                inputName="", inputEmail, inputCpf, inputCity, inputRoleDesc, inputRadioGroup,
                 textareaAddress, selectStates, textareaResume, textareaRole  } = this.state;
 
         return (
            <form>
                 <fieldset>
                     <legend>Personal Data</legend>
-                    <Input id="inputName" type="text" max="40" required={true} value={inputName} handleOnChange={this.handleOnChange} >Name:</Input>
+                    <Input id="inputName" type="text" max="40" required={true} value={inputName.toUpperCase()} handleOnChange={this.handleOnChange} >Name:</Input>
                     <Input id="inputEmail" type="text" max="50" required={true} value={inputEmail} handleOnChange={this.handleOnChange}>Email:</Input>
                     <Input id="inputCpf" type="text" max="11" required={true} value={inputCpf} handleOnChange={this.handleOnChange}>CPF:</Input>
                     <Input id="textareaAddress" type="textarea" max="200" required={true} value={textareaAddress} handleOnChange={this.handleOnChange}>Address:</Input>
