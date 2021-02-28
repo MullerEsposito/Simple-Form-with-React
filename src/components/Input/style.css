@@ -1,6 +1,11 @@
 .container-input {
     display: flex;
     margin: 5px;
-    align-items: flex-start;
+    align-items: stretch;
     flex-direction: column;
+    width: 100%;
+}
+
+label {
+    align-self: baseline;
 }

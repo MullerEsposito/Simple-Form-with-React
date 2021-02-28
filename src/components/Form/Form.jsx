@@ -23,8 +23,8 @@ class Form extends Component {
     }
 
     handleSubmit = event => {
-        event.preventDefault()
-        this.setState({  showReport: true })
+        event.preventDefault();
+        this.setState((previous) => ({  showReport: !previous.showReport }));
     }
 
     retrievesValidationCity = hasError => hasError && this.setState({ inputCity: ""});
@@ -36,33 +36,40 @@ class Form extends Component {
             { id: "radioApartment", name: "type", value: "Apartment", label: "Apartment:"}
         ]
         const { 
-                inputName="", inputEmail="", inputCpf="", inputCity="", inputRoleDesc, inputRadioGroup,
+                inputName="", inputEmail="", inputCpf="", inputCity="", inputRoleDesc="", inputRadioGroup,
                 textareaAddress, selectStates, textareaResume, textareaRole, showReport  } = this.state;
 
         return (
             <div>
-                <form onSubmit={this.handleSubmit}>
-                    <div className="container-fildsets">
-                        <fieldset>
-                            <legend>Personal Data</legend>
-                            <Input id="inputName" type="text" max="40" required={true} value={inputName.toUpperCase()} handleOnChange={this.handleOnChange} >Name:</Input>
-                            <Input id="inputEmail" type="text" max="50" required={true} value={inputEmail} handleOnChange={this.handleOnChange}>Email:</Input>
-                            <Input id="inputCpf" type="text" max="11" required={true} value={inputCpf} handleOnChange={this.handleOnChange}>CPF:</Input>
-                            <Input id="textareaAddress" type="textarea" max="200" required={true} value={textareaAddress} handleOnChange={this.handleOnChange}>Address:</Input>
-                            <Input id="inputCity" type="text" max="28" required={true} value={inputCity} handleOnChange={this.handleOnChange} handleOnBlur={this.retrievesValidationCity}>City:</Input>
-                            <Select id="selectStates" name="selectStates" value={selectStates} handleOnChange={this.handleOnChange}>State:</Select>
-                            <RadioGroup id="inputRadioGroup" listRadio={radios} checked={inputRadioGroup} handleOnChange={this.handleOnChange}>Type:</RadioGroup>
-                        </fieldset>
-                        <fieldset>
-                            <legend>Last Job Data</legend>
-                            <Input id="textareaResume" type="textarea" max="1000" required={true} value={textareaResume} handleOnChange={this.handleOnChange}>Resume</Input>
-                            <Input id="textareaRole" type="textarea" max="40" required={true} value={textareaRole} handleOnChange={this.handleOnChange}>Role:</Input>
-                            <Input id="inputRoleDesc" type="text" max="500" required={true} value={inputRoleDesc} handleOnChange={this.handleOnChange}>Role Description:</Input>
-                        </fieldset>
+                { showReport || 
+                    <form onSubmit={this.handleSubmit}>
+                        <div className="container-fildsets">
+                            <fieldset>
+                                <legend>Personal Data</legend>
+                                <Input id="inputName" type="text" max="40" required={true} value={inputName.toUpperCase()} handleOnChange={this.handleOnChange} >Name:</Input>
+                                <Input id="inputEmail" type="text" max="50" required={true} value={inputEmail} handleOnChange={this.handleOnChange}>Email:</Input>
+                                <Input id="inputCpf" type="text" max="11" required={true} value={inputCpf} handleOnChange={this.handleOnChange}>CPF:</Input>
+                                <Input id="textareaAddress" type="textarea" max="200" required={true} value={textareaAddress} handleOnChange={this.handleOnChange}>Address:</Input>
+                                <Input id="inputCity" type="text" max="28" required={true} value={inputCity} handleOnChange={this.handleOnChange} handleOnBlur={this.retrievesValidationCity}>City:</Input>
+                                <Select id="selectStates" name="selectStates" value={selectStates} handleOnChange={this.handleOnChange}>State:</Select>
+                                <RadioGroup id="inputRadioGroup" listRadio={radios} checked={inputRadioGroup} handleOnChange={this.handleOnChange}>Type:</RadioGroup>
+                            </fieldset>
+                            <fieldset>
+                                <legend>Last Job Data</legend>
+                                <Input id="textareaResume" type="textarea" max="1000" required={true} value={textareaResume} handleOnChange={this.handleOnChange}>Resume</Input>
+                                <Input id="textareaRole" type="textarea" max="40" required={true} value={textareaRole} handleOnChange={this.handleOnChange}>Role:</Input>
+                                <Input id="inputRoleDesc" type="text" max="500" required={true} value={inputRoleDesc} handleOnChange={this.handleOnChange}>Role Description:</Input>
+                            </fieldset>
+                        </div>
+                        <button>Submit</button>
+                    </form>
+                }
+                { showReport && 
+                    <div>
+                        <Report data={this.state}/> 
+                        <input type="button" onClick={this.handleSubmit} value="Back" />
                     </div>
-                    <button>Submit</button>
-                </form>
-                { showReport && <Report data={this.state}/> }
+                }
             </div>
         );
     };
