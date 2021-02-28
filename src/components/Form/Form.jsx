@@ -11,20 +11,30 @@ class Form extends Component {
     constructor(){
         super();
         this.state = {
+            form: {},
             showReport: false
         }
         
     }
 
     handleOnChange = ({ target : { name, value } }) => {
-        this.setState({
-            [name]: value
-        })
+        this.setState((previous) => (
+           {
+               form: {
+                   ...previous.form,
+                    [name]: value,
+               }
+           }
+        ));
     }
 
     handleSubmit = event => {
         event.preventDefault();
         this.setState((previous) => ({  showReport: !previous.showReport }));
+    }
+
+    handleOnClickCleanButton = () => {
+        this.setState({ form: {}});
     }
 
     retrievesValidationCity = hasError => hasError && this.setState({ inputCity: ""});
@@ -35,9 +45,9 @@ class Form extends Component {
             { id: "radioHouse", name: "type", value: "House", label: "House:"},
             { id: "radioApartment", name: "type", value: "Apartment", label: "Apartment:"}
         ]
-        const { 
+        const { form: {
                 inputName="", inputEmail="", inputCpf="", inputCity="", inputRoleDesc="", inputRadioGroup,
-                textareaAddress, selectStates, textareaResume, textareaRole, showReport  } = this.state;
+                textareaAddress, selectStates, textareaResume, textareaRole} , showReport  } = this.state;
 
         return (
             <div>
@@ -66,8 +76,9 @@ class Form extends Component {
                 }
                 { showReport && 
                     <div>
-                        <Report data={this.state}/> 
+                        <Report data={this.state.form}/> 
                         <input type="button" onClick={this.handleSubmit} value="Back" />
+                        <input type="button" onClick={this.handleOnClickCleanButton} value="Clean" />
                     </div>
                 }
             </div>
