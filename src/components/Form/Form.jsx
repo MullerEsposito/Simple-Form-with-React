@@ -30,11 +30,14 @@ class Form extends Component {
 
     handleSubmit = event => {
         event.preventDefault();
-        this.setState((previous) => ({  showReport: !previous.showReport }));
+        this.setState({showReport: true });
     }
 
     handleOnClickCleanButton = () => {
-        this.setState({ form: {}});
+        this.setState({ 
+            form: {},
+            showReport: false,
+        });
     }
 
     retrievesValidationCity = hasError => hasError && this.setState({ inputCity: ""});
@@ -79,8 +82,7 @@ class Form extends Component {
                 { showReport && 
                     <div>
                         <Report data={this.state.form}/> 
-                        <input type="button" onClick={this.handleSubmit} value="Back" />
-                        <input type="button" onClick={this.handleOnClickCleanButton} value="Clean" />
+                        <input type="button" onClick={this.handleOnClickCleanButton} value="Back" />
                     </div>
                 }
             </div>
