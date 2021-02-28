@@ -1,15 +1,52 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap");
+
+body {
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+  background: #59585a;
+  background: -webkit-linear-gradient(to bottom, #4a4b75, #cfa5e0);
+  background: -o-linear-gradient(to bottom, #4a4b75, #cfa5e0);
+  background: -moz-linear-gradient(to bottom, #4a4b75, #cfa5e0);
+  background: linear-gradient(to bottom, #4a4b75, #cfa5e0);
+}
+.states-housing {
+  width: 100%;
+  display: flex;
+  gap: 0%;
+}
 form {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
+  width: 40%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
 
 fieldset {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  background: -webkit-linear-gradient(to top, #6065f0, #a1c095);
+  background: -o-linear-gradient(to top, #6065f0, #a1c095);
+  background: -moz-linear-gradient(to top, #6065f0, #a1c095);
+  background: linear-gradient(to top, #6065f0, #a1c095);
+  width: 80%;
+  border: none;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 1px 6px 44px 6px whitesmoke;
+}
+legend {
+  letter-spacing: 4px;
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+  font-weight: 800;
+  font-size: larger;
+  color: black;
+  text-align: left;
+}
+button {
+  align-self: center;
 }
 
-button {
-    align-self: center;
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

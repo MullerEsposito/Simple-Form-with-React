@@ -16,7 +16,7 @@ class Input extends Component {
         const { noAlert } = this.state;
 
         if (name === 'textareaRole' && noAlert ) {
-            alert('Fill careful this info!'); 
+            // alert('Fill careful this info!'); 
             this.setState({noAlert: false});
         } 
     }
@@ -24,22 +24,34 @@ class Input extends Component {
 
     render() {
         const { id, type, max, required, children, value, handleOnChange, handleOnBlur } = this.props;
-
+        const { noAlert } = this.state;
 
         
         return (
+            <>
+            <link rel="stylesheet" href="path/to/balloon.css"></link>
             <div className="container-input">
                 <label htmlFor={id}>
                     {children}
                 </label>
                     {(()=> {
-                        if (type === 'textarea') return (
-                            <textarea 
-                                id={id} name={id} value={value} maxLength={max}
-                                required={required} onChange={handleOnChange}
-                                onMouseEnter={this.handleOnMouseEnter}
-                            />
-                        ) 
+                        if (type === 'textarea') {
+                            return (
+                                <>
+                                <textarea 
+                                    id={id} name={id} value={value} maxLength={max}
+                                    required={required} onChange={handleOnChange}
+                                    onMouseEnter={this.handleOnMouseEnter}
+                                    // datadata-balloon-length="small" 
+                                    onFocus={
+                                        ''
+                                    }
+                                />
+                                    {noAlert || <p>'Fill careful this info!</p>}
+                                </>
+                           ) 
+                        }                            
+                        
                         
                         return <input 
                                     id={id} name={id} type={type} 
@@ -51,6 +63,7 @@ class Input extends Component {
                                 />;
                     })()}
             </div>
+           </>
         );
     };
 };

@@ -50,7 +50,7 @@ class Form extends Component {
                 textareaAddress, selectStates, textareaResume, textareaRole} , showReport  } = this.state;
 
         return (
-            <div>
+            <div className='container'>
                 { showReport || 
                     <form onSubmit={this.handleSubmit}>
                         <div className="container-fildsets">
@@ -61,8 +61,10 @@ class Form extends Component {
                                 <Input id="inputCpf" type="text" max="11" required={true} value={inputCpf} handleOnChange={this.handleOnChange}>CPF:</Input>
                                 <Input id="textareaAddress" type="textarea" max="200" required={true} value={textareaAddress} handleOnChange={this.handleOnChange}>Address:</Input>
                                 <Input id="inputCity" type="text" max="28" required={true} value={inputCity} handleOnChange={this.handleOnChange} handleOnBlur={this.retrievesValidationCity}>City:</Input>
+                                <div className='states-housing' >
                                 <Select id="selectStates" name="selectStates" value={selectStates} handleOnChange={this.handleOnChange}>State:</Select>
                                 <RadioGroup id="inputRadioGroup" listRadio={radios} checked={inputRadioGroup} handleOnChange={this.handleOnChange}>Type:</RadioGroup>
+                                </div>
                             </fieldset>
                             <fieldset>
                                 <legend>Last Job Data</legend>
