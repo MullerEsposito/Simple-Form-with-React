@@ -8,7 +8,7 @@ class Radio extends Component {
             <div className="container-radio">
                 <label htmlFor={id}>
                     {children}
-                    <input id={id} type="radio" name={name} value={value} onChange={handleOnChange}/>
+                    <input id={id} type="radio" name={name} value={value} onChange={handleOnChange} required/>
                 </label>
             </div>
         );
