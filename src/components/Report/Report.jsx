@@ -27,8 +27,8 @@ class Report extends Component {
                         <section>
                             <h2>Last Job Data</h2>
                             <p>Resume: {data.textareaResume}</p>
-                            <p>Role: {data.textareaRole}</p>
-                            <p>Description: {data.inputRoleDesc}</p>
+                            <p>Role: {data.inputRole}</p>
+                            <p>Description: {data.textareaRoleDesc}</p>
                         </section>
                     </article>
                 </main>
