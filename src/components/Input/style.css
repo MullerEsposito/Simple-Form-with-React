@@ -15,7 +15,7 @@ label {
   align-self: baseline;
 }
 
-input {
+input[type=text] {
   font-family: "Roboto", Arial, Helvetica, sans-serif;
   font-size: large;
   border: none;
