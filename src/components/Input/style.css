@@ -24,14 +24,14 @@ input[type=text] {
 }
 input:focus {
   outline: none;
-  box-shadow: 1px 4px 14px 4px whitesmoke;
+  box-shadow: 0px 0px 0px 2px whitesmoke;
 }
 textarea {
   border-radius: 4px;
   border: none;
+  resize: none;
 }
 textarea:focus {
-  
-  box-shadow: 1px 4px 14px 4px whitesmoke;
+  box-shadow: 0px 0px 0px 2px whitesmoke;
   outline: none;
 }
