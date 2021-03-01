@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import Tooltip from '../Tooltip/Tooltip';
+
 import './style.css';
 
 class Input extends Component {
@@ -15,10 +17,11 @@ class Input extends Component {
     handleOnMouseEnter = ({ target: { name }}) => {
         const { noAlert } = this.state;
 
-        if (name === 'textareaRole' && noAlert ) {
-            // alert('Fill careful this info!'); 
-            this.setState({noAlert: false});
-        } 
+        if (name === 'textareaRole' && noAlert ) this.setState({noAlert: false});
+    }
+
+    handleOnFocus = () => {
+        document.getElementById('tooltip')?.remove();
     }
     
 
@@ -38,16 +41,13 @@ class Input extends Component {
                         if (type === 'textarea') {
                             return (
                                 <>
+                                    {noAlert || <Tooltip className="tooltip" id="tooltip">Fill careful this info!</Tooltip>}
                                 <textarea 
                                     id={id} name={id} value={value} maxLength={max}
                                     required={required} onChange={handleOnChange}
                                     onMouseEnter={this.handleOnMouseEnter}
-                                    // datadata-balloon-length="small" 
-                                    onFocus={
-                                        ''
-                                    }
+                                    onFocus={this.handleOnFocus}
                                 />
-                                    {noAlert || <p>'Fill careful this info!</p>}
                                 </>
                            ) 
                         }                            

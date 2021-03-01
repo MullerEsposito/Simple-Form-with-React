@@ -14,7 +14,6 @@ body {
   gap: 0%;
 }
 form {
-  width: 40%;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -25,7 +24,6 @@ fieldset {
   background: -o-linear-gradient(to top, #6065f0, #a1c095);
   background: -moz-linear-gradient(to top, #6065f0, #a1c095);
   background: linear-gradient(to top, #6065f0, #a1c095);
-  width: 80%;
   border: none;
   border-radius: 8px;
   display: flex;

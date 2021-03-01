@@ -49,6 +49,6 @@
     * Limite de 500 caracteres
     * Campo obrigatório
 
-### Crie um botão que, ao ser clicado, monta uma '<div>' com o consolidado dos dados que foram inseridos no formulário.
+### Crie um botão que, ao ser clicado, monta uma \<div\> com o consolidado dos dados que foram inseridos no formulário.
 
-### Crie um botão Limpar que limpa todos os campos do formulário e a '<div>' com seu currículo também.
+### Crie um botão Limpar que limpa todos os campos do formulário e a \<div\> com seu currículo também.
