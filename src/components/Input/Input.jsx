@@ -17,7 +17,7 @@ class Input extends Component {
     handleOnMouseEnter = ({ target: { name }}) => {
         const { noAlert } = this.state;
 
-        if (name === 'textareaRole' && noAlert ) this.setState({noAlert: false});
+        if (name === 'textareaRoleDesc' && noAlert ) this.setState({noAlert: false});
     }
 
     handleOnFocus = () => {
@@ -46,7 +46,7 @@ class Input extends Component {
                                     id={id} name={id} value={value} maxLength={max}
                                     required={required} onChange={handleOnChange}
                                     onMouseEnter={this.handleOnMouseEnter}
-                                    onFocus={this.handleOnFocus}
+                                    onFocus={this.handleOnFocus} rows="6"
                                 />
                                 </>
                            ) 

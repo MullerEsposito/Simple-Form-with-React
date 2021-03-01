@@ -8,7 +8,7 @@
     visibility: hidden;
     position: absolute;
     left: 50%;
-    bottom: 35px;
+    top: -15px;
     background: #ff9000;
     padding: 8px;
     border-radius: 4px;

@@ -72,8 +72,8 @@ class Form extends Component {
                             <fieldset>
                                 <legend>Last Job Data</legend>
                                 <Input id="textareaResume" type="textarea" max="1000" required={true} value={textareaResume} handleOnChange={this.handleOnChange}>Resume</Input>
-                                <Input id="textareaRole" type="textarea" max="40" required={true} value={textareaRole} handleOnChange={this.handleOnChange}>Role:</Input>
-                                <Input id="inputRoleDesc" type="text" max="500" required={true} value={inputRoleDesc} handleOnChange={this.handleOnChange}>Role Description:</Input>
+                                <Input id="inputRole" type="text" max="40" required={true} value={textareaRole} handleOnChange={this.handleOnChange}>Role:</Input>
+                                <Input id="textareaRoleDesc" type="textarea" max="500" required={true} value={inputRoleDesc} handleOnChange={this.handleOnChange}>Role Description:</Input>
                             </fieldset>
                         </div>
                         <button>Submit</button>
